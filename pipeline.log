@@ -1,0 +1,283 @@
+2026-06-04 08:27:09  [INFO]    Loaded pipeline_config.py (22 exported names)
+2026-06-04 08:27:09  [INFO]  =================================================================
+2026-06-04 08:27:09  [INFO]  VULNERABILITY INDEX PIPELINE
+2026-06-04 08:27:09  [INFO]  =================================================================
+2026-06-04 08:27:09  [INFO]  Data file  : C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\20263003_Nepal_Lumbini_data.csv
+2026-06-04 08:27:09  [INFO]  Output dir : C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs
+2026-06-04 08:27:09  [INFO]  Log file   : C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\pipeline.log
+2026-06-04 08:27:09  [INFO]  Stages     : 28
+2026-06-04 08:27:09  [INFO]  =================================================================
+2026-06-04 08:27:09  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:09  [INFO]    Stage 01 | FVI | CIMDEN Scoring
+2026-06-04 08:27:09  [INFO]    Script : stage01_fvi_scoring.py
+2026-06-04 08:27:09  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:10  [INFO]  Note: NumExpr detected 22 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-06-04 08:27:10  [INFO]  NumExpr defaulting to 8 threads.
+2026-06-04 08:27:11  [INFO]    [OK]  Completed in 1.4s
+2026-06-04 08:27:11  [INFO]    Copied FVI_CIMDEN_scores.csv -> outputs/
+2026-06-04 08:27:11  [INFO]    Copied 20263003_Nepal_Lumbini_data.csv -> outputs/
+2026-06-04 08:27:11  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:11  [INFO]    Stage 02 | EVI | CIMDEN Scoring
+2026-06-04 08:27:11  [INFO]    Script : stage02_evi_scoring.py
+2026-06-04 08:27:11  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:15  [INFO]    [OK]  Completed in 3.8s
+2026-06-04 08:27:15  [INFO]    Copied EVI_CIMDEN_scores.csv -> outputs/
+2026-06-04 08:27:15  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:15  [INFO]    Stage 03 | DX | Indicator Missing Data Diagnostic
+2026-06-04 08:27:15  [INFO]    Script : stage03_indicator_missing_diagnostic.py
+2026-06-04 08:27:15  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:22  [INFO]    [OK]  Completed in 7.8s
+2026-06-04 08:27:22  [INFO]    Confirmed: missing_data_diagnostic_plots/ (16 figures)
+2026-06-04 08:27:22  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:22  [INFO]    Stage 04 | DX | Explanatory Variable Diagnostic
+2026-06-04 08:27:22  [INFO]    Script : stage04_explanatory_vars_diagnostic.py
+2026-06-04 08:27:22  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:28  [INFO]    [OK]  Completed in 5.7s
+2026-06-04 08:27:28  [INFO]    Confirmed: explanatory_vars_diagnostic_plots/ (8 figures)
+2026-06-04 08:27:28  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:28  [INFO]    Stage 05 | PRE | Typology Cluster Analysis
+2026-06-04 08:27:28  [INFO]    Script : stage05_typology_clusters.py
+2026-06-04 08:27:28  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:36  [INFO]    [OK]  Completed in 7.8s
+2026-06-04 08:27:36  [INFO]    Confirmed: typology_clusters.csv (10,372,938 bytes)
+2026-06-04 08:27:36  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:36  [INFO]    Stage 06 | PRE | MNAR Typology Imputation
+2026-06-04 08:27:36  [INFO]    Script : stage06_mnar_imputation.py
+2026-06-04 08:27:36  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:39  [INFO]    [OK]  Completed in 3.0s
+2026-06-04 08:27:39  [INFO]    Confirmed: imputation/EVI_imputed.csv (13,590,709 bytes)
+2026-06-04 08:27:39  [INFO]    Confirmed: imputation/FVI_imputed.csv (13,023,314 bytes)
+2026-06-04 08:27:39  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:39  [INFO]    Stage 07 | PRE | MICE Imputation
+2026-06-04 08:27:39  [INFO]    Script : stage07_mice_imputation.py
+2026-06-04 08:27:39  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:42  [INFO]    [OK]  Completed in 2.9s
+2026-06-04 08:27:42  [INFO]    Confirmed: imputed_EVI_scores.csv
+2026-06-04 08:27:42  [INFO]    Confirmed: imputed_FVI_scores.csv
+2026-06-04 08:27:42  [INFO]    Confirmed: mice_imputation_log.csv
+2026-06-04 08:27:42  [INFO]    Confirmed: mice_mnar_sensitivity.csv
+2026-06-04 08:27:42  [INFO]    Copied imputed_FVI_scores.csv -> outputs/
+2026-06-04 08:27:42  [INFO]    Copied imputed_EVI_scores.csv -> outputs/
+2026-06-04 08:27:42  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:42  [INFO]    Stage 08 | PRE | MAO Composite Imputation
+2026-06-04 08:27:42  [INFO]    Script : stage08_mao_imputation.py
+2026-06-04 08:27:42  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    [OK]  Completed in 14.8s
+2026-06-04 08:27:57  [INFO]    Confirmed: analysis_dataset.csv (13,784,001 bytes)
+2026-06-04 08:27:57  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    Stage 08b | PRE | Ward-Level Covariate Integration
+2026-06-04 08:27:57  [INFO]    Script : stage08b_ward_covariates.py
+2026-06-04 08:27:57  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    [OK]  Completed in 0.9s
+2026-06-04 08:27:57  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    Stage 09 | PRE | KNN Flood Imputation
+2026-06-04 08:27:57  [INFO]    Script : stage09_knn_flood_imputation.py
+2026-06-04 08:27:57  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    [OK]  Completed in 0.0s
+2026-06-04 08:27:57  [ERROR]    knn_flood_imputation_log.csv not found — check Stage 09
+2026-06-04 08:27:57  [INFO]    analysis_dataset.csv size after KNN update: 13,883,709 bytes
+2026-06-04 08:27:57  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:57  [INFO]    Stage 10 | PRE | Variable Missingness Screening
+2026-06-04 08:27:57  [INFO]    Script : stage10_variable_screening.py
+2026-06-04 08:27:57  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:27:59  [INFO]    [OK]  Completed in 1.5s
+2026-06-04 08:27:59  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:27:59  [INFO]    Stage 11 | FVI | Descriptives & Frequencies
+2026-06-04 08:27:59  [INFO]    Script : stage11_fvi_descriptives.py
+2026-06-04 08:27:59  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:00  [INFO]    [OK]  Completed in 1.0s
+2026-06-04 08:28:00  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:00  [INFO]    Stage 12 | FVI | Bivariate Screening
+2026-06-04 08:28:00  [INFO]    Script : stage12_fvi_bivariate.py
+2026-06-04 08:28:00  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:01  [INFO]    [OK]  Completed in 0.7s
+2026-06-04 08:28:01  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:01  [INFO]    Stage 13 | FVI | Stepwise Regression
+2026-06-04 08:28:01  [INFO]    Script : stage13_fvi_stepwise.py
+2026-06-04 08:28:01  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:08  [INFO]    [OK]  Completed in 7.4s
+2026-06-04 08:28:08  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:08  [INFO]    Stage 14 | FVI | Moran's I Autocorrelation
+2026-06-04 08:28:08  [INFO]    Script : stage14_fvi_morans.py
+2026-06-04 08:28:08  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:13  [INFO]    [OK]  Completed in 4.8s
+2026-06-04 08:28:13  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:13  [INFO]    Stage 15 | FVI | Mixed-Effects Model
+2026-06-04 08:28:13  [INFO]    Script : stage15_fvi_mixed_effects.py
+2026-06-04 08:28:13  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:14  [INFO]    [OK]  Completed in 1.3s
+2026-06-04 08:28:14  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:14  [INFO]    Stage 16 | EVI | Descriptives & Frequencies
+2026-06-04 08:28:14  [INFO]    Script : stage16_evi_descriptives.py
+2026-06-04 08:28:14  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:15  [INFO]    [OK]  Completed in 0.8s
+2026-06-04 08:28:15  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:15  [INFO]    Stage 17 | EVI | Bivariate Screening
+2026-06-04 08:28:15  [INFO]    Script : stage17_evi_bivariate.py
+2026-06-04 08:28:15  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:16  [INFO]    [OK]  Completed in 0.7s
+2026-06-04 08:28:16  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:16  [INFO]    Stage 18 | EVI | Stepwise Regression
+2026-06-04 08:28:16  [INFO]    Script : stage18_evi_stepwise.py
+2026-06-04 08:28:16  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:19  [INFO]    [OK]  Completed in 3.8s
+2026-06-04 08:28:19  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:19  [INFO]    Stage 19 | EVI | Moran's I Autocorrelation
+2026-06-04 08:28:19  [INFO]    Script : stage19_evi_morans.py
+2026-06-04 08:28:19  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:25  [INFO]    [OK]  Completed in 5.9s
+2026-06-04 08:28:25  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:25  [INFO]    Stage 20 | LISA | Cluster Maps (FVI + EVI)
+2026-06-04 08:28:25  [INFO]    Script : stage20_lisa_cluster_maps.py
+2026-06-04 08:28:25  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:28  [INFO]    [OK]  Completed in 2.6s
+2026-06-04 08:28:28  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:28  [INFO]    Stage 21 | EVI | Mixed-Effects Model
+2026-06-04 08:28:28  [INFO]    Script : stage21_evi_mixed_effects.py
+2026-06-04 08:28:28  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:29  [INFO]    [OK]  Completed in 1.2s
+2026-06-04 08:28:29  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:29  [INFO]    Stage 22 | CVI | Composite Score (FVI + EVI)
+2026-06-04 08:28:29  [INFO]    Script : stage22_composite_cvi.py
+2026-06-04 08:28:29  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:28:29  [INFO]  =================================================================
+2026-06-04 08:28:29  [INFO]  COMPOSITE VULNERABILITY INDEX (CVI)
+2026-06-04 08:28:29  [INFO]  =================================================================
+2026-06-04 08:28:29  [INFO]  FVI weight : 0.5
+2026-06-04 08:28:29  [INFO]  EVI weight : 0.5
+2026-06-04 08:28:29  [INFO]  Output dir : C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs
+2026-06-04 08:28:29  [INFO]  =================================================================
+2026-06-04 08:28:29  [INFO]  Loaded FVI data: 2,993 rows from 'C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\imputed_FVI_scores.csv'
+2026-06-04 08:28:29  [INFO]    FVI column 'FVI_norm_1_5': 2,993 valid values
+2026-06-04 08:28:30  [INFO]  Scenario B: Loaded EVI data: 2,993 rows from 'C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\imputed_EVI_scores.csv'
+2026-06-04 08:28:30  [INFO]    Joined on 'ID': 2,993/2,993 rows matched.
+2026-06-04 08:28:30  [INFO]  
+  FVI valid    : 2,993
+2026-06-04 08:28:30  [INFO]    EVI valid    : 2,993
+2026-06-04 08:28:30  [INFO]    CVI computed : 2,993 (both scores present)
+2026-06-04 08:28:30  [INFO]    CVI missing  : 0 (at least one component missing)
+
+2026-06-04 08:28:30  [INFO]  ==========================================================
+2026-06-04 08:28:30  [INFO]  DESCRIPTIVE STATISTICS  (1–5 scale)
+2026-06-04 08:28:30  [INFO]  ==========================================================
+2026-06-04 08:28:30  [INFO]  
+Index    n   Mean  Median     SD    Min    Max    P25    P75
+  FVI 2993 2.9493  3.0000 0.5658 1.4156 4.7662 2.5325 3.4000
+  EVI 2993 2.3155  2.2727 0.5343 1.0000 4.0000 1.8333 2.6667
+  CVI 2993 2.6324  2.6167 0.3631 1.5747 4.0844 2.3669 2.8755
+
+2026-06-04 08:28:30  [INFO]  CVI CLASS FREQUENCIES
+2026-06-04 08:28:30  [INFO]  ==========================================================
+2026-06-04 08:28:30  [INFO]    1  Low     :   635  (21.2%)
+2026-06-04 08:28:30  [INFO]    2  Medium  : 2,348  (78.4%)
+2026-06-04 08:28:30  [INFO]    3  High    :    10  (0.3%)
+2026-06-04 08:28:30  [INFO]  
+Saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\cvi_descriptives.csv
+2026-06-04 08:28:30  [INFO]  Saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\cvi_distribution.png
+2026-06-04 08:28:30  [INFO]  Saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\cvi_component_scatter.png
+2026-06-04 08:28:30  [INFO]  Saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\cvi_correlation_matrix.png
+2026-06-04 08:28:31  [INFO]  Saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\cvi_class_by_community.png
+2026-06-04 08:28:31  [INFO]  
+Full dataset saved: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs\CVI_scores.csv
+2026-06-04 08:28:31  [INFO]    Rows    : 2,993
+2026-06-04 08:28:31  [INFO]    CVI col : CVI_norm_1_5  (ready for downstream modelling)
+2026-06-04 08:28:31  [INFO]  Saved: cvi_random_intercepts.csv  (18 communities)
+2026-06-04 08:28:31  [INFO]  Saved: cvi_random_intercepts.png
+2026-06-04 08:28:32  [INFO]  
+2026-06-04 08:28:32  [INFO]  =================================================================
+2026-06-04 08:28:32  [INFO]  SENSITIVITY ANALYSIS: Variance-normalised CVI
+2026-06-04 08:28:32  [INFO]  =================================================================
+2026-06-04 08:28:32  [INFO]    FVI SD (sample)  : 0.5658
+2026-06-04 08:28:32  [INFO]    EVI SD (sample)  : 0.5343
+2026-06-04 08:28:32  [INFO]    SD ratio EVI/FVI : 0.9444
+2026-06-04 08:28:32  [INFO]  
+2026-06-04 08:28:32  [INFO]    Spearman rho (community rankings)  : 0.9880
+2026-06-04 08:28:32  [INFO]    p-value                            : 0.0000
+2026-06-04 08:28:32  [INFO]    Max rank change (positions)        : 2
+2026-06-04 08:28:32  [INFO]    Mean rank change (positions)       : 0.50
+2026-06-04 08:28:32  [INFO]  
+2026-06-04 08:28:32  [INFO]    VERDICT: Rankings are ROBUST to variance normalisation (rho >= 0.95 and max rank change <= 2 positions). Equal-weight CVI is the preferred formulation.
+2026-06-04 08:28:32  [INFO]  =================================================================
+2026-06-04 08:28:32  [INFO]  Saved: cvi_sensitivity_variance_normalisation.csv
+2026-06-04 08:28:32  [INFO]  
+=================================================================
+2026-06-04 08:28:32  [INFO]  CVI COMPUTATION COMPLETE
+2026-06-04 08:28:32  [INFO]  Final CVI column : CVI_norm_1_5  in  CVI_scores.csv
+2026-06-04 08:28:32  [INFO]  =================================================================
+2026-06-04 08:28:32  [INFO]    [OK]  Completed in 2.5s
+2026-06-04 08:28:32  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:28:32  [INFO]    Stage 23 | RF | Random Forest Supplementary Validation
+2026-06-04 08:28:32  [INFO]    Script : stage23_random_forest.py
+2026-06-04 08:28:32  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:30:49  [INFO]    [OK]  Completed in 137.1s
+2026-06-04 08:30:49  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:30:49  [INFO]    Stage 24 | RF | Validation & Calibration
+2026-06-04 08:30:49  [INFO]    Script : stage24_rf_validation.py
+2026-06-04 08:30:49  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:35:37  [INFO]    [OK]  Completed in 288.3s
+2026-06-04 08:35:37  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:35:37  [INFO]    Stage 25 | GAM | Generalised Additive Model
+2026-06-04 08:35:37  [INFO]    Script : stage25_gam.py
+2026-06-04 08:35:37  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:35:53  [INFO]    [OK]  Completed in 15.6s
+2026-06-04 08:35:53  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:35:53  [INFO]    Stage 26 | GAM | Validation & Calibration
+2026-06-04 08:35:53  [INFO]    Script : stage26_gam_validation.py
+2026-06-04 08:35:53  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:42:20  [INFO]    [OK]  Completed in 387.7s
+2026-06-04 08:42:20  [INFO]  
+-----------------------------------------------------------------
+2026-06-04 08:42:20  [INFO]    Stage 27 | SYN | Cross-Method Predictor Agreement
+2026-06-04 08:42:20  [INFO]    Script : stage27_cross_method_comparison.py
+2026-06-04 08:42:20  [INFO]  -----------------------------------------------------------------
+2026-06-04 08:42:21  [INFO]    [OK]  Completed in 0.2s
+2026-06-04 08:42:21  [INFO]    Confirmed: cross_method/cross_method_fvi.csv (8,515 bytes)
+2026-06-04 08:42:21  [INFO]    Confirmed: cross_method/cross_method_evi.csv (6,960 bytes)
+2026-06-04 08:42:21  [INFO]    Confirmed: cross_method/cross_method_summary.txt (9,806 bytes)
+2026-06-04 08:42:21  [INFO]  
+=================================================================
+2026-06-04 08:42:21  [INFO]    PIPELINE COMPLETE  —  28/28 stages  (911.3s total)
+2026-06-04 08:42:21  [INFO]  
+  Key outputs in: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\outputs
+2026-06-04 08:42:21  [INFO]      FVI_CIMDEN_scores.csv        Raw FVI scores (pre-imputation)
+2026-06-04 08:42:21  [INFO]      EVI_CIMDEN_scores.csv        Raw EVI scores (pre-imputation)
+2026-06-04 08:42:21  [INFO]      imputation/imputed_FVI*.csv  FVI after MICE imputation
+2026-06-04 08:42:21  [INFO]      imputation/imputed_EVI*.csv  EVI after MICE imputation
+2026-06-04 08:42:21  [INFO]      imputation/mice_*.csv        Imputation log + MNAR table
+2026-06-04 08:42:21  [INFO]      analysis_dataset.csv         Merged dataset for regressions
+2026-06-04 08:42:21  [INFO]      fvi_im_predictors.csv        FVI Individual Model predictors (-> Stage 15)
+2026-06-04 08:42:21  [INFO]      evi_im_predictors.csv        EVI Individual Model predictors (-> Stage 21)
+2026-06-04 08:42:21  [INFO]      CVI_scores.csv               Composite index (1-5)
+2026-06-04 08:42:21  [INFO]      cross_method/                Cross-method predictor agreement
+2026-06-04 08:42:21  [INFO]                                   (OLS, ME, RF, GAM; 2x2 design)
+2026-06-04 08:42:21  [INFO]      stage_logs/                  Per-stage console output (one .txt per stage)
+2026-06-04 08:42:21  [INFO]  
+  Full log: C:\Users\jenke\OneDrive - University of Twente\Desktop\MASTER_THESIS\ml_pipeline\pipeline_v49\pipeline_v49\pipeline.log
+2026-06-04 08:42:21  [INFO]  =================================================================
